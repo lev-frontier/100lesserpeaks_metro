@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="UTF-8">
+		<title>小百岳路線圖</title>
+		<link rel="stylesheet" type="text/css" href="metro.css">
+		<script src="metro.js"></script> 
+		<meta name="viewport" content="width=960">
+	</head>
+	<body onload="SetAllPos();">
+		<div id="bgcontanier"></div>
+		<div align="center">
+
+			<div id="maincontainer">
+
+				<div id="gridcontainer" style="visibility: visible;">
+				</div>
+
+				<div id="nodecontainer">
+					<div id="RouteMapTitle" class="title" data-col="1" data-row="1" style="color: gray;"></div>	
+					<div class="title" data-col="19" data-row="1" style="color: #aaaaaa;">小百岳路線圖</div>	
+					<div class="title" data-col="16" data-row="61" style="color: #aaaaaa; text-align: right; right: 40px;">共計<span id="SelectionCount">０００</span>座完登</div>	
+				
+				
+					<div class="group" data-x="0" data-y="1">	
+					
+						<!-- 台北 -->
+						<div class="border_red box" data-col="10" data-row="1">001<br>大屯</div>
+						<div class="line_gray dotted hl" data-col="11" data-row="1"><span class="routeText">北縱</span></div>
+						<div class="border_red box" data-col="12" data-row="1">002<br>七星</div>
+						<div class="line_gray dotted vl" data-col="12" data-row="2"><span class="routeTextV">北縱</span></div>
+						<div class="border_red box" data-col="12" data-row="3">008<br>大崙頭</div>
+						<div class="line_gray dotted hl" data-col="11" data-row="3"><span class="routeText">北縱</span></div>
+						<div class="border_red box" data-col="10" data-row="3">009<br>劍潭</div>
+						<div class="border_red box" data-col="12" data-row="5">013<br>南港</div>
+						<div class="border_red box" data-col="14" data-row="5">014<br>土庫岳</div>
+						
+						<!-- 基隆 -->
+						
+						<div class="line_gray dotted hl" data-col="13" data-row="3" style="width:240px;"><span class="routeText">界寮縱走</span></div>
+						<div class="border_orange box" data-col="19" data-row="3">003<br>大武崙</div>
+						<div class="line_gray dotted backslash2" data-col="19" data-row="4"><span class="routeText">連走</span></div>
+						<div class="border_orange box" data-col="21" data-row="3">004<br>槓子寮</div>
+						<div class="line_gray dotted slash2" data-col="21" data-row="4"><span class="routeText">連走</span></div>
+						<div class="border_orange box" data-col="20" data-row="5">007<br>紅淡</div>
+						
+						<!-- 新北 -->
+						<div class="border_yellow box" data-col="23" data-row="6">006<br>雞籠</div>
+						
+						<div class="border_yellow box" data-col="21" data-row="8">010<br>五分</div>
+						<div class="line_gray dotted hl" data-col="20" data-row="8"><span class="routeText">五四</span></div>
+						<div class="border_yellow box" data-col="19" data-row="8">011<br>姜子寮</div>
+						<div class="line_gray dotted hl" data-col="18" data-row="8"><span class="routeText">五四</span></div>
+						<div class="border_yellow box" data-col="17" data-row="8">012<br><span class="small_span_label">汐止<br>大尖</span></div>
+						<div class="border_yellow box" data-col="6" data-row="4">005<br><span class="small_span_label">觀音<br>(五股)</span></div>
+						<div class="border_yellow box" data-col="6" data-row="6">015<br>大棟</div>
+						<div class="border_yellow box" data-col="10" data-row="8">016<br>南勢角</div>
+						<div class="line_gray dotted hl" data-col="9" data-row="8"><span class="routeText" style="line-height:12px;margin-top:-6px">台北<br>天際</span></div>
+						<div class="border_yellow box" data-col="8" data-row="8">018<br>天上</div>
+						<div class="border_yellow box" data-col="6" data-row="8">019<br>鳶山</div>
+						<div class="border_yellow box" data-col="12" data-row="8">020<br>獅仔頭</div>
+						<div class="border_yellow box" data-col="14" data-row="8">017<br>二格</div>
+						
+						<!-- 桃園 -->
+						<div class="border_yellowgreen box" data-col="6" data-row="10">021<br>金面</div>
+						<div class="border_yellowgreen box" data-col="12" data-row="10">022<br>東眼</div>
+						<div class="border_yellowgreen box" data-col="10" data-row="10">023<br>溪州</div>
+						<div class="line_gray dotted hl" data-col="9" data-row="10"><span class="routeText">水庫</span></div>
+						<div class="border_yellowgreen box" data-col="8" data-row="10">024<br>石門</div>
+						
+						<!-- 新竹 -->
+						<div class="line_gray dotted vl" data-col="8" data-row="11"><span class="routeTextV">雙石</span></div>
+						<div class="border_green box" data-col="8" data-row="12">025<br>石牛</div>
+						<div class="border_green box" data-col="4" data-row="12">026<br>十八尖</div>
+						<div class="border_green box" data-col="6" data-row="12">027<br><span class="small_span_label">中坑<br>(飛鳳)</span></div>
+						<div class="border_green box" data-col="12" data-row="12">028<br>李棟</div>
+						<div class="border_green box" data-col="10" data-row="12">030<br>五指</div>
+						<div class="line_gray dotted vl" data-col="10" data-row="13"><span class="routeTextV">五峰</span><span class="routeTextV">天際</span></div>
+						<div class="border_green box" data-col="10" data-row="14">031<br>鵝公髻</div>
+						
+						
+						<!-- 苗栗 -->
+						<div class="border_lightcyan box" data-col="8" data-row="16">029<br>獅頭</div>
+						<div class="border_lightcyan box" data-col="10" data-row="16">032<br>向天湖</div>
+						<div class="line_gray dotted vl" data-col="10" data-row="17"><span class="routeTextV">向加</span></div>
+						<div class="border_lightcyan box" data-col="10" data-row="18">034<br>加里</div>
+						<div class="border_lightcyan box" data-col="8" data-row="18">033<br>仙山</div>
+						
+						<div class="border_lightcyan box" data-col="6" data-row="20">035<br>火炎</div>
+						<div class="border_lightcyan box" data-col="8" data-row="20">036<br>關刀</div>
+						<div class="border_lightcyan box" data-col="10" data-row="20">037<br>馬那邦</div>
+						
+						<!-- 台中 -->
+						<div class="border_teal box" data-col="4" data-row="22">038<br>鐵砧</div>
+						<div class="border_teal box" data-col="12" data-row="22">039<br>稍來</div>
+						
+						<div class="border_teal box" data-col="8" data-row="22">041<br>頭嵙</div>
+						<div class="border_teal box" data-col="6" data-row="22">040<br>聚興</div>
+						<div class="border_teal box" data-col="6" data-row="24">042<br>南觀音</div>
+						
+						<div class="border_teal box" data-col="8" data-row="24">043<br>三汀</div>
+						<div class="border_teal box" data-col="10" data-row="24">044<br>暗影</div>
+						<div class="border_teal box" data-col="10" data-row="26">045<br>大橫屏</div>
+						<div class="border_teal box" data-col="8" data-row="26">046<br>阿罩霧</div>
+						
+						<!-- 南投 -->
+						<div class="border_aqua box" data-col="13" data-row="27">047<br>九份二</div>
+						<div class="border_aqua box" data-col="9" data-row="29">048<br>橫山</div>
+						<div class="line_gray dotted vl" data-col="9" data-row="30"><span class="routeTextV">公路</span></div>
+						<div class="border_aqua box" data-col="9" data-row="31">051<br>松柏坑</div>
+						<div class="border_aqua box" data-col="11" data-row="29">050<br>集集大</div>
+						<div class="border_aqua box" data-col="13" data-row="29">049<br>貓囒</div>
+						<div class="border_aqua box" data-col="15" data-row="29">052<br>後尖</div>
+						<div class="border_aqua box" data-col="13" data-row="31">053<br>鳳凰</div>
+						<div class="line_gray dotted vl" data-col="13" data-row="32"><span class="routeTextV">鳳金</span></div>
+						<div class="border_aqua box" data-col="13" data-row="33">054<br>金柑樹</div>
+						
+						
+						<!-- 嘉義 -->
+						
+						<div class="border_skyblue box" data-col="12" data-row="35">055<br>石壁</div>
+						<div class="border_skyblue box" data-col="8" data-row="35">056<br><span class="small_span_label">雲嘉<br>大尖</span></div>
+						<div class="line_gray dotted vl" data-col="8" data-row="36"><span class="routeTextV">雲嘉</span><span class="routeTextV">五連峰</span></div>
+						<div class="border_skyblue box" data-col="8" data-row="37">057<br>梨子腳</div>
+						
+						<div class="border_skyblue box" data-col="10" data-row="37">058<br>獨立</div>
+						<div class="border_skyblue box" data-col="12" data-row="37">059<br>大塔</div>
+						
+						<div class="border_skyblue box" data-col="10" data-row="39">061<br>大湖尖</div>
+						<div class="border_skyblue box" data-col="12" data-row="39">060<br><span class="small_span_label">大凍<br>(阿里山)</span></div>
+						
+						<div class="border_skyblue box" data-col="6" data-row="37">062<br>紅毛埤</div>
+						
+						
+						<!-- 台南 -->
+						<div class="border_cornflowerblue box" data-col="8" data-row="41">063<br><span class="small_span_label">大凍<br>(白河)</span></div>
+						<div class="line_gray dotted vl" data-col="8" data-row="42"><span class="routeTextV">連稜</span></div>
+						<div class="border_cornflowerblue box" data-col="8" data-row="43">064<br>崁頭</div>
+						
+						<div class="border_cornflowerblue box" data-col="10" data-row="41">065<br>三腳南</div>
+						<div class="line_gray dotted vl" data-col="10" data-row="42"><span class="routeTextV">三竹</span></div>
+						<div class="border_cornflowerblue box" data-col="10" data-row="43">067<br>竹子尖</div>
+						
+						<div class="border_cornflowerblue box" data-col="12" data-row="43">066<br><span class="small_span_label">西阿<br>里關</span></div>
+						
+						
+						<!-- 高雄 -->
+						<div class="line_gray dotted vl" data-col="8" data-row="44"><span class="routeTextV">連稜</span></div>
+						<div class="border_navy box" data-col="8" data-row="45">070<br>烏山嶺</div>
+						<div class="border_navy box" data-col="12" data-row="45">069<br><span class="small_span_label">白雲<br>(廍亭)</span></div>
+						<div class="border_navy box" data-col="14" data-row="45">068<br>藤枝</div>
+						<div class="border_navy box" data-col="14" data-row="47">071<br>鳴海</div>
+						<div class="border_navy box" data-col="10" data-row="47">072<br>旗尾</div>
+						<div class="border_navy box" data-col="8" data-row="47">074<br>大崗</div>
+						<div class="border_navy box" data-col="8" data-row="49">075<br><span class="small_span_label">觀音<br>(高雄)</span></div>
+						<div class="border_navy box" data-col="6" data-row="49">077<br>壽山</div>
+						
+						<!-- 屏東 -->
+						<div class="border_purple box" data-col="12" data-row="49">073<br>尾寮</div>
+						<div class="border_purple box" data-col="12" data-row="51">076<br>笠頂</div>
+						<div class="border_purple box" data-col="12" data-row="53">078<br>棚集</div>
+						<div class="border_purple box" data-col="14" data-row="55">079<br>女仍</div>
+						<div class="border_purple box" data-col="12" data-row="55">080<br>里龍</div>
+						<div class="border_purple box" data-col="12" data-row="57">081<br>大山母</div>
+						
+						
+						<!-- 宜蘭 -->
+						<div class="border_pink box" data-col="23" data-row="10">082<br>灣坑頭</div>
+						<div class="border_pink box" data-col="21" data-row="12">084<br>鵲子</div>
+						<div class="line_gray dotted hl" data-col="20" data-row="12"><span class="routeText" style="line-height:12px;margin-top:-6px">縱走</span></div>
+						<div class="border_pink box" data-col="19" data-row="12">083<br>三角崙</div>
+						<div class="border_pink box" data-col="19" data-row="14">085<br>三星</div>
+						
+						<!-- 花蓮 -->
+						<div class="border_palevioletred box" data-col="17" data-row="24">086<br>卡拉寶</div>
+						<div class="line_gray dotted hl" data-col="18" data-row="24"><span class="routeText" style="line-height:12px;margin-top:-6px">太魯閣<br>公路</span></div>
+						<div class="border_palevioletred box" data-col="19" data-row="24">087<br>立霧</div>
+						
+						<div class="border_palevioletred box" data-col="19" data-row="26">088<br>初音</div>
+						<div class="border_palevioletred box" data-col="19" data-row="28">089<br>鯉魚</div>
+						<div class="border_palevioletred box" data-col="19" data-row="30">090<br>月眉</div>
+						<div class="border_palevioletred box" data-col="19" data-row="32">091<br>八里灣</div>
+						
+						<div class="border_palevioletred box" data-col="19" data-row="34">092<br>萬人</div>
+						
+						<!-- 台東 -->
+						<div class="border_crimson box" data-col="19" data-row="47">093<br>都蘭</div>						
+						<div class="border_crimson box" data-col="19" data-row="49">094<br>太麻里</div>
+						<div class="border_crimson box" data-col="19" data-row="51">095<br>加奈美</div>
+						<div class="border_crimson box" data-col="19" data-row="53">096<br>巴塱衛</div>
+						
+						<!-- 離島 -->
+						<div class="border_blue box" data-col="19" data-row="57">097<br>紅頭</div>
+						<div class="border_blue box" data-col="2" data-row="2">098<br>雲台</div>
+						<div class="border_blue box" data-col="2" data-row="29">099<br>太武</div>
+						<div class="border_blue box" data-col="4" data-row="31">100<br>蛇頭</div>
+					</div>
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+		
+
+		</div>
+	
+	
+		<div style="position: relative;">
+			<div id="info" align="left" class="no-print">
+				<div class="vertical-center" style="margin-left: 10px;margin-right: 10px;">
+					<div style="margin: 10px;">
+						<span style="float: left;width:20%;" class="label">暱稱</span>
+						<input id="input_name" style="width:40%;" class="label" type="text" maxlength=32></input>
+						<input id="input_name_placeholder" style="width:40%;display:none;" class="label" type="text" disabled></input>
+						<input style="float: right;" class="button" type="button" value="設定" onclick="SetName(document.getElementById('input_name').value);"></input>
+					</div>
+					
+					<hr>
+					
+					
+					<div style="margin: 10px;">
+						<input class="button" type="button" value="？" onclick="ShowLockTip();"></input>
+						<span class="label">鎖定編輯</span>
+						<input id="input_lock" style="float: right;" class="label" type="checkbox" onclick="SetLock();"></input>
+					</div>
+					<div style="margin: 10px;">
+					</div>
+					
+					
+					<hr>
+					
+					<div style="margin: 10px;" align="center">
+						<input style="float: left;" class="button" type="button" value="清除資料" onclick="ClearAll();"></input>
+						<input style="float: right;" class="button" type="button" value="隱藏控制列" onclick="HideControl();"></input>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
